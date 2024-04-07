@@ -26,8 +26,26 @@
         android:id="@+id/textViewResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:layout_below="@id/buttonCalculate"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="202dp"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/buttonCube"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNumber"
+        android:layout_marginTop="64dp"
+        android:onClick="calculateCube"
+        android:text="calculate cube" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNumber"
+        android:layout_marginTop="131dp"
+        android:onClick="reset"
+        android:text="RESET" />
 
 </RelativeLayout>

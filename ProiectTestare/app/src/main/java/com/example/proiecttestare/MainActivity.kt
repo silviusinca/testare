@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var editTextNumber: EditText
-    lateinit var textViewResult: TextView
+    private lateinit var textViewResult: TextView
     private val results = mutableListOf<Int>()
-    private val squareCalculator = SquareCalculator()
+    private val functionality = Functionalities()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,14 +64,38 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val square = squareCalculator.calculateSquare(number)
-        results.add(square)
+        val square = functionality.calculateSquare(number)
         displayResults()
     }
 
+    fun calculateCube(view: android.view.View) {
+        val inputText = editTextNumber.text.toString().trim()
+        if (inputText.isEmpty()) {
+            textViewResult.text = "Please enter a number"
+            return
+        }
+
+        val number = inputText.toIntOrNull()
+
+        if (number == null || number !in -100..100) {
+            textViewResult.text = "Invalid number. Please enter a number between -100 and 100"
+            return
+        }
+
+        val cube = functionality.calculateCube(number)
+        displayResults()
+    }
+
+    fun reset(view: android.view.View) {
+        functionality.reset()
+        textViewResult.text = ""
+        displayResults()
+    }
+
+
     private fun displayResults() {
         results.sort()
-        val resultText = squareCalculator.getResultsSorted().joinToString(", ") { it.toString() }
+        val resultText = functionality.getResultsSorted().joinToString(", ") { it.toString() }
         textViewResult.text = resultText
     }
 
@@ -87,7 +111,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class SquareCalculator {
+class Functionalities {
     private val results = mutableListOf<Int>()
 
     fun calculateSquare(number: Int): Int {
@@ -95,6 +119,17 @@ class SquareCalculator {
        results.add(square)
        return square
     }
+
+    fun calculateCube(number: Int): Int {
+        val cube = number * number * number
+        results.add(cube)
+        return cube
+    }
+    
+    fun reset() {
+        results.clear()
+    }
+
 
     fun getResultsSorted(): List<Int> {
         results.sort()

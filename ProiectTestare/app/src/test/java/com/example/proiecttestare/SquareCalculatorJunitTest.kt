@@ -11,11 +11,11 @@ import org.junit.runner.RunWith
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class SquareCalculatorJunitTest {
 
-    private lateinit var squareCalculator: SquareCalculator
+    private lateinit var squareCalculator: Functionalities
 
     @BeforeEach
     fun setUp() {
-        squareCalculator = SquareCalculator()
+        squareCalculator = Functionalities()
     }
 
     @Test

@@ -7,25 +7,25 @@ import io.kotest.matchers.shouldBe
 class SquareCalculatorKotestTest : StringSpec({
 
     "test calc for positive number" {
-        val squareCalculator = SquareCalculator()
+        val squareCalculator = Functionalities()
         val result = squareCalculator.calculateSquare(5)
         result shouldBe 25
     }
 
     "test calc for negative number" {
-        val squareCalculator = SquareCalculator()
+        val squareCalculator = Functionalities()
         val result = squareCalculator.calculateSquare(-3)
         result shouldBe 9
     }
 
     "test calc for zero" {
-        val squareCalculator = SquareCalculator()
+        val squareCalculator = Functionalities()
         val result = squareCalculator.calculateSquare(0)
         result shouldBe 0
     }
 
     "test sort with positive numbers" {
-        val squareCalculator = SquareCalculator()
+        val squareCalculator = Functionalities()
         squareCalculator.calculateSquare(3)
         squareCalculator.calculateSquare(1)
         squareCalculator.calculateSquare(2)
@@ -35,7 +35,7 @@ class SquareCalculatorKotestTest : StringSpec({
     }
 
     "test sort with negative numbers" {
-        val squareCalculator = SquareCalculator()
+        val squareCalculator = Functionalities()
         squareCalculator.calculateSquare(-3)
         squareCalculator.calculateSquare(-1)
         squareCalculator.calculateSquare(-2)
@@ -45,7 +45,7 @@ class SquareCalculatorKotestTest : StringSpec({
     }
 
     "test sort with mixed numbers" {
-        val squareCalculator = SquareCalculator()
+        val squareCalculator = Functionalities()
         squareCalculator.calculateSquare(-3)
         squareCalculator.calculateSquare(1)
         squareCalculator.calculateSquare(2)

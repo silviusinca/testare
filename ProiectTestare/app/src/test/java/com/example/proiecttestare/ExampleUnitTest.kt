@@ -1,5 +1,6 @@
 package com.example.proiecttestare
 
+import android.annotation.SuppressLint
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.replaceText
@@ -18,6 +19,7 @@ import org.junit.runner.RunWith
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
+@SuppressLint("DiscouragedPrivateApi", "SoonBlockedPrivateApi")
 @LargeTest
 @RunWith(AndroidJUnit4::class)
 class ExampleUnitTest {
