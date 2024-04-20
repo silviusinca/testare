@@ -3,12 +3,14 @@ package com.example.proiecttestare
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@DisplayName("Testare unitara pe SquareCalculator - JUnit5")
 class SquareCalculatorJunitTest {
 
     private lateinit var squareCalculator: Functionalities
@@ -19,6 +21,7 @@ class SquareCalculatorJunitTest {
     }
 
     @Test
+    @DisplayName("Testarea ridicarii la patrat al unui numar pozitiv - JUnit5")
     fun testCalcForPositiveNumber() {
         val result = squareCalculator.calculateSquare(5)
         assertEquals(25, result)
