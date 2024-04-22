@@ -35,3 +35,11 @@ class ExampleUnitTest {
     }
 
 }
+
+///TO DO
+///strategie de testare, mai multe tipuri
+///comparatie mai detaliata intre cele 2 framework uri
+///raport de testare (cat la suta s a executat, ce linii nu s au executat etc.
+///diferenta intre ce am facut noi si ce genereaza AI ul ?
+///PPT
+///alt tool de testare? -> generare de mutanti??
