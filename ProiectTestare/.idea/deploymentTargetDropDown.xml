@@ -32,16 +32,7 @@
           </targetsSelectedWithDialog>
         </State>
       </entry>
-      <entry key="testCalculateSquare()">
-        <State />
-      </entry>
-      <entry key="testOnSupportNavigateUp()">
-        <State />
-      </entry>
-      <entry key="testOptionsMenuInflated()">
-        <State />
-      </entry>
-      <entry key="testReset()">
+      <entry key="testUIOnMoreNumbers()">
         <State />
       </entry>
     </value>

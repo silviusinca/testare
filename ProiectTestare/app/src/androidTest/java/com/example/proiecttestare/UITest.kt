@@ -57,4 +57,24 @@ class UITest {
         scenario.close()
     }
 
+    @Test
+    fun testUIOnMoreNumbers() {
+        val scenario = ActivityScenario.launch(MainActivity::class.java)
+
+        onView(withId(R.id.editTextNumber)).perform(ViewActions.typeText("98"))
+        onView(withId(R.id.buttonCalculate)).perform(ViewActions.click())
+        onView(withId(R.id.editTextNumber)).perform(ViewActions.clearText())
+
+        onView(withId(R.id.editTextNumber)).perform(ViewActions.typeText("0"))
+        onView(withId(R.id.buttonCalculate)).perform(ViewActions.click())
+        onView(withId(R.id.editTextNumber)).perform(ViewActions.clearText())
+
+        onView(withId(R.id.editTextNumber)).perform(ViewActions.typeText("-86"))
+        onView(withId(R.id.buttonCube)).perform(ViewActions.click())
+        onView(withId(R.id.editTextNumber)).perform(ViewActions.clearText())
+
+        onView(withId(R.id.textViewResult)).check(matches(ViewMatchers.withText("-636056, 0, 9604")))
+        scenario.close()
+    }
+
 }

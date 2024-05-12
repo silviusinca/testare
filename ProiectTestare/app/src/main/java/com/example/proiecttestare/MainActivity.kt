@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         val number = inputText.toIntOrNull()
 
-        if (number == null || number !in -100..100) {
+        if (number == null || number !in -100000..100000) {
             textViewResult.text = "Invalid number. Please enter a number between -100 and 100"
             return
         }
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
         val number = inputText.toIntOrNull()
 
-        if (number == null || number !in -100..100) {
+        if (number == null || number !in -100000..100000) {
             textViewResult.text = "Invalid number. Please enter a number between -100 and 100"
             return
         }
@@ -129,7 +129,6 @@ class Functionalities {
     fun reset() {
         results.clear()
     }
-
 
     fun getResultsSorted(): List<Int> {
         results.sort()
