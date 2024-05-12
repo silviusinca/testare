@@ -3,12 +3,22 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("io.kotest.multiplatform") version "5.0.2"
     id("jacoco")
+    id("org.jetbrains.kotlinx.kover") version "0.7.6"
+
 }
 
 android {
     namespace = "com.example.proiecttestare"
     compileSdk = 34
 
+    packaging {
+        resources.excludes.addAll(
+            listOf(
+                "META-INF/LICENSE.md",
+                "META-INF/LICENSE-notice.md",
+            )
+        )
+    }
 
     defaultConfig {
         applicationId = "com.example.proiecttestare"
@@ -27,6 +37,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            enableAndroidTestCoverage = true
+            enableUnitTestCoverage = true
         }
     }
     compileOptions {
@@ -55,6 +69,7 @@ dependencies {
     implementation(libs.androidx.junit.ktx)
     testImplementation(libs.junit)
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    androidTestImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
     testImplementation("io.kotest:kotest-runner-junit5-jvm:5.8.1")
     testImplementation("io.kotest:kotest-assertions-core-jvm:5.8.1")
     testImplementation("io.kotest:kotest-runner-junit5:5.8.1")
@@ -69,7 +84,6 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit")
     testImplementation("org.mockito:mockito-core:5.11.0")
     androidTestImplementation("org.mockito:mockito-android:5.11.0")
-
 
 }
 

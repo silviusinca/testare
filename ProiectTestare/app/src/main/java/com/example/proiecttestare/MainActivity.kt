@@ -17,11 +17,11 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity() {
 
     lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var editTextNumber: EditText
-    private lateinit var textViewResult: TextView
-    private val results = mutableListOf<Int>()
-    private val functionality = Functionalities()
+    lateinit var binding: ActivityMainBinding
+    lateinit var editTextNumber: EditText
+    lateinit var textViewResult: TextView
+    val results = mutableListOf<Int>()
+    var functionality = Functionalities()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         val number = inputText.toIntOrNull()
 
         if (number == null || number !in -100000..100000) {
-            textViewResult.text = "Invalid number. Please enter a number between -100 and 100"
+            textViewResult.text = "Invalid number. Please enter a number between -100000 and 100000"
             return
         }
 
@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         val number = inputText.toIntOrNull()
 
         if (number == null || number !in -100000..100000) {
-            textViewResult.text = "Invalid number. Please enter a number between -100 and 100"
+            textViewResult.text = "Invalid number. Please enter a number between -100000 and 100000"
             return
         }
 
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun displayResults() {
+    fun displayResults() {
         results.sort()
         val resultText = functionality.getResultsSorted().joinToString(", ") { it.toString() }
         textViewResult.text = resultText
