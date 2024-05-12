@@ -2,7 +2,7 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Tests in 'com.example.proiecttestare'">
+      <entry key="UITest">
         <State />
       </entry>
       <entry key="app">
@@ -31,6 +31,18 @@
             </Target>
           </targetsSelectedWithDialog>
         </State>
+      </entry>
+      <entry key="testCalculateSquare()">
+        <State />
+      </entry>
+      <entry key="testOnSupportNavigateUp()">
+        <State />
+      </entry>
+      <entry key="testOptionsMenuInflated()">
+        <State />
+      </entry>
+      <entry key="testReset()">
+        <State />
       </entry>
     </value>
   </component>
